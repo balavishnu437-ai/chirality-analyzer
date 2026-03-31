@@ -1,11 +1,12 @@
 import streamlit as st
 
-# -------------------------------
-# HOME PAGE
-# -------------------------------
+# Page control
 if "page" not in st.session_state:
     st.session_state.page = "home"
 
+# -------------------------------
+# HOME PAGE
+# -------------------------------
 if st.session_state.page == "home":
 
     st.title("🧪 Drug Chirality Analyzer")
@@ -32,13 +33,12 @@ elif st.session_state.page == "app":
         "COc1ccc2c(c1)CCN(C[C@H]3CCc4cc(OC)c(OC)cc4C3)C2"
     )
 
-   def analyze_chirality(smiles):
+    def analyze_chirality(smiles):
 
-    # Ivabradine SMILES check
-    ivabradine_smiles = "COc1ccc2c(c1)CCN(C[C@H]3CCc4cc(OC)c(OC)cc4C3)C2"
+        ivabradine_smiles = "COc1ccc2c(c1)CCN(C[C@H]3CCc4cc(OC)c(OC)cc4C3)C2"
 
-    if smiles.strip() == ivabradine_smiles:
-        return """
+        if smiles.strip() == ivabradine_smiles:
+            return """
 💊 Drug Name: Ivabradine
 
 🔬 ADVANCED CHIRALITY ANALYSIS
@@ -58,12 +58,14 @@ Configuration: S
 ✔ True stereogenic center (4 unique substituents)
 --------------------------------------------------
 """
-    elif "@" in smiles:
-        return "✅ Chiral center detected (Stereochemistry present)"
-    else:
-        return "❌ No chiral center detected"
+        elif "@" in smiles:
+            return "✅ Chiral center detected (Stereochemistry present)"
+        else:
+            return "❌ No chiral center detected"
+
     if st.button("Analyze"):
         result = analyze_chirality(smiles)
-       st.code(result)
+        st.code(result)
+
     if st.button("⬅ Back"):
         st.session_state.page = "home"
