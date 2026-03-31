@@ -12,9 +12,9 @@ if st.session_state.page == "home":
     st.title("🧪 Drug Chirality Analyzer")
 
     st.markdown("### 👨‍🎓 Student Details")
-    st.write("**Name:** Vishnu")
-    st.write("**Register No:** 123456")
-    st.write("**Class:** B.Sc Chemistry")
+    st.write("**Name:** Bala Vishnu.R")
+    st.write("**Register No:** RA2511026050007")
+    st.write("**Class:** BTECH CSE AIML-A")
 
     st.markdown("---")
 
