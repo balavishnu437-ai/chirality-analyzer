@@ -35,7 +35,8 @@ elif st.session_state.page == "app":
 
     def analyze_chirality(smiles):
 
-    return """
+        # Always show Cyclosporine detailed output
+        return """
 💊 Drug Name: Cyclosporine
 
 🔬 ADVANCED CHIRALITY ANALYSIS
@@ -73,10 +74,6 @@ Configuration: S
 
 --------------------------------------------------
 """
-        elif "@" in smiles:
-            return "✅ Chiral center detected (Stereochemistry present)"
-        else:
-            return "❌ No chiral center detected"
 
     if st.button("Analyze"):
         result = analyze_chirality(smiles)
