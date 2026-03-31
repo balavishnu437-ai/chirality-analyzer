@@ -66,8 +66,10 @@ elif st.session_state.page == "app":
         data = analyze_chirality(smiles)
 
         st.subheader("💊 Drug Name: Cyclosporine")
-        st.image(
-    "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyclosporine.svg",
+      st.markdown("### 🧬 Molecular Structure")
+
+st.image(
+    "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?cid=5284373&t=l",
     caption="Cyclosporine Chemical Structure",
     use_container_width=True
 )
