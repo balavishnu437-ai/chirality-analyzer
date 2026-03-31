@@ -66,6 +66,11 @@ elif st.session_state.page == "app":
         data = analyze_chirality(smiles)
 
         st.subheader("💊 Drug Name: Cyclosporine")
+        st.image(
+    "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyclosporine.svg",
+    caption="Cyclosporine Chemical Structure",
+    use_container_width=True
+)
 
         # TOTAL COUNT
         st.success(f"🧪 Total Chiral Centers Detected: {len(data)}")
