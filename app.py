@@ -33,14 +33,14 @@ elif st.session_state.page == "app":
 
     st.title("🔬 Chirality Analyzer")
 
+    # ✅ SMILES input (real structure, not name)
     smiles = st.text_input(
-    "Enter SMILES",
-    "CCC1C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N1C)C)C)C)C)C)C)C)C)C)C)C"
-
+        "Enter SMILES",
+        "CCC1C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N1C)C)C)C)C)C)C)C)C)C)C)C"
     )
 
     # -------------------------------
-    # FUNCTION: GENERATE CHIRAL TABLE
+    # FUNCTION: GENERATE CHIRAL DATA
     # -------------------------------
     def analyze_chirality(smiles):
 
@@ -66,18 +66,21 @@ elif st.session_state.page == "app":
         data = analyze_chirality(smiles)
 
         st.subheader("💊 Drug Name: Cyclosporine")
-      st.markdown("### 🧬 Molecular Structure")
 
-st.image(
-    "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?cid=5284373&t=l",
-    caption="Cyclosporine Chemical Structure",
-    use_container_width=True
-)
+        # ✅ STRUCTURE IMAGE (WORKING LINK)
+        st.markdown("### 🧬 Molecular Structure")
+        st.image(
+            "https://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?cid=5284373&t=l",
+            caption="Cyclosporine Chemical Structure",
+            use_container_width=True
+        )
 
-        # TOTAL COUNT
+        st.markdown("---")
+
+        # ✅ TOTAL COUNT
         st.success(f"🧪 Total Chiral Centers Detected: {len(data)}")
 
-        # TABLE DISPLAY
+        # ✅ TABLE
         df = pd.DataFrame(data)
         st.table(df)
 
