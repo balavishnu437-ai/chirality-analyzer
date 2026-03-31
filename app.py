@@ -34,8 +34,9 @@ elif st.session_state.page == "app":
     st.title("🔬 Chirality Analyzer")
 
     smiles = st.text_input(
-        "Enter SMILES (optional)",
-        "Cyclosporine"
+    "Enter SMILES",
+    "CCC1C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N1C)C)C)C)C)C)C)C)C)C)C)C"
+
     )
 
     # -------------------------------
